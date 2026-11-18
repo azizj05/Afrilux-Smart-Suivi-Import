@@ -18,13 +18,46 @@ loadEnv();
 
 const express = require("express");
 const cors = require("cors");
+const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
 const { Pool } = require("pg");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+// Sécurité
+app.use(helmet());
+app.use(rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  message: { error: "Trop de requêtes, réessayez plus tard." },
+}));
+app.use(cors({
+  origin: process.env.CORS_ORIGIN || "http://localhost:5500",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
 app.use(express.json());
+
+// Authentification par clé API (toutes les routes /api/* sauf health)
+function requireApiKey(req, res, next) {
+  const apiKey = process.env.API_KEY;
+  if (!apiKey) {
+    // Pas de clé configurée : mode développement, autoriser mais avertir
+    return next();
+  }
+  const provided = req.headers["authorization"];
+  if (!provided || provided !== `Bearer ${apiKey}`) {
+    return res.status(401).json({ error: "Clé API requise" });
+  }
+  next();
+}
+app.use("/api/", requireApiKey);
+
+// Health check (sans auth)
+app.get("/api/health", (_req, res) => {
+  res.json({ status: "ok" });
+});
 
 // Configuration PostgreSQL
 const pool = new Pool({
