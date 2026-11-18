@@ -1,4 +1,4 @@
-﻿<!doctype html>
+�<!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
@@ -17,15 +17,15 @@
       <div>
         <div class="eyebrow">Afrilux Smart</div>
         <h1>Suivi Import</h1>
-        <p>Maritime FCL Â· LCL Â· AÃ©rien â€” dossiers, conteneurs, documents et archives</p>
+        <p>Maritime FCL · LCL · Aérien � dossiers, conteneurs, documents et archives</p>
       </div>
     </div>
     <div class="actions">
-      <span id="who" class="who" hidden><span id="who-mail" data-notr></span><button type="button" class="ghost" id="btn-logout">DÃ©connexion</button></span>
+      <span id="who" class="who" hidden><span id="who-mail" data-notr></span><button type="button" class="ghost" id="btn-logout">Déconnexion</button></span>
       <div class="lang" role="group" aria-label="Langue" data-notr>
         <button type="button" data-lang="fr" lang="fr" aria-pressed="true">FR</button>
         <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button>
-        <button type="button" data-lang="zh" lang="zh-CN" aria-pressed="false">ä¸­æ–‡</button>
+        <button type="button" data-lang="zh" lang="zh-CN" aria-pressed="false">中�!</button>
       </div>
       <button id="btn-backup" type="button" hidden>Sauvegarder</button>
       <button id="btn-restore" type="button" hidden>Restaurer</button>
@@ -38,12 +38,12 @@
 
   <div id="banner" class="banner" hidden></div>
 
-  <section class="kpis" aria-label="SynthÃ¨se">
+  <section class="kpis" aria-label="Synthèse">
     <div class="kpi"><span>Dossiers en cours</span><b id="k-dos">0</b><small id="k-dos-s">&nbsp;</small></div>
     <div class="kpi"><span>Conteneurs en cours</span><b id="k-ctn">0</b><small id="k-ctn-s">&nbsp;</small></div>
-    <div class="kpi"><span>Volume (EVP)</span><b id="k-teu">0</b><small>20' = 1 Â· 40' = 2</small></div>
-    <div class="kpi hot"><span>ArrivÃ©es â‰¤ 7 jours</span><b id="k-eta">0</b><small id="k-eta-s">&nbsp;</small></div>
-    <div class="kpi"><span>DI Ã  renouveler</span><b id="k-di">0</b><small id="k-di-s">&nbsp;</small></div>
+    <div class="kpi"><span>Volume (EVP)</span><b id="k-teu">0</b><small>20' = 1 · 40' = 2</small></div>
+    <div class="kpi hot"><span>Arrivées �0� 7 jours</span><b id="k-eta">0</b><small id="k-eta-s">&nbsp;</small></div>
+    <div class="kpi"><span>DI à renouveler</span><b id="k-di">0</b><small id="k-di-s">&nbsp;</small></div>
   </section>
 
   <div class="bar">
@@ -52,7 +52,7 @@
       <button type="button" role="tab" id="tab-archives" aria-selected="false">Archives <span class="n" id="n-archives">0</span></button>
     </div>
     <div class="filters">
-      <input id="q" type="search" placeholder="Rechercher dossier, BL, nÂ° conteneurâ€¦" aria-label="Rechercher">
+      <input id="q" type="search" placeholder="Rechercher dossier, BL, n° conteneur⬦" aria-label="Rechercher">
       <select id="fmode" aria-label="Filtrer par transport"></select>
       <select id="finco" aria-label="Filtrer par Incoterm"></select>
       <select id="fstat" aria-label="Filtrer par statut"></select>
@@ -62,7 +62,7 @@
   <div class="tablebox">
     <table>
       <thead><tr>
-        <th>Dossier Â· PR Â· PO</th><th>Fournisseur Â· Paiement</th><th>Navire / Vol Â· BL / LTA</th><th>ETA</th><th>Conteneurs Â· Colis</th><th>Documents</th><th>Statut</th><th></th>
+        <th>Dossier · PR · PO</th><th>Fournisseur · Paiement</th><th>Navire / Vol · BL / LTA</th><th>ETA</th><th>Conteneurs · Colis</th><th>Documents</th><th>Statut</th><th></th>
       </tr></thead>
       <tbody id="rows"></tbody>
     </table>
@@ -78,19 +78,19 @@
   <header><h2 id="form-title">Nouveau dossier</h2><button type="button" class="ghost" data-close>Fermer</button></header>
   <form id="form" class="body" novalidate>
     <div class="grid2">
-      <label class="f">NÂ° dossier *<input id="f-ref" required placeholder="IMP-2026-031"></label>
+      <label class="f">N° dossier *<input id="f-ref" required placeholder="IMP-2026-031"></label>
       <label class="f">Statut<select id="f-statut"></select></label>
       <label class="f">Mode de transport<select id="f-mode"></select></label>
     </div>
     <fieldset>
       <legend>Achat</legend>
       <div class="grid2">
-        <label class="f">NÂ° PR (demande d'achat)<input id="f-pr" placeholder="PR-2026-0458"></label>
-        <label class="f">NÂ° PO (bon de commande)<input id="f-po" placeholder="PO-4500123456"></label>
+        <label class="f">N° PR (demande d'achat)<input id="f-pr" placeholder="PR-2026-0458"></label>
+        <label class="f">N° PO (bon de commande)<input id="f-po" placeholder="PO-4500123456"></label>
         <label class="f">Date du PO<input id="f-poDate" type="date"></label>
         <label class="f">Paiement fournisseur<select id="f-paiement"></select></label>
         <label class="f">Fournisseur *<input id="f-fournisseur" required placeholder="Nom du fournisseur"></label>
-        <label class="f">Marchandise (rÃ©sumÃ©)<input id="f-marchandise" placeholder="Engrais NPK, piÃ¨cesâ€¦"></label>
+        <label class="f">Marchandise (résumé)<input id="f-marchandise" placeholder="Engrais NPK, pièces⬦"></label>
         <label class="f">Devise du PO<select id="f-devise"></select></label>
       </div>
     </fieldset>
@@ -99,47 +99,47 @@
       <div class="pwrap"><div class="plist" id="p-list"></div></div>
       <div class="ptot">
         <button type="button" id="p-add">+ Ajouter un produit</button>
-        <span class="sum"><span id="p-count">0</span> produit(s) Â· Total <b id="p-total">0</b></span>
+        <span class="sum"><span id="p-count">0</span> produit(s) · Total <b id="p-total">0</b></span>
       </div>
       <details>
         <summary>Coller des lignes depuis Excel</summary>
-        <textarea id="p-paste" placeholder="Code article â‡¥ DÃ©signation â‡¥ Code SH â‡¥ QuantitÃ© â‡¥ UnitÃ© â‡¥ Prix unitaire (une ligne par produit)"></textarea>
+        <textarea id="p-paste" placeholder="Code article �!� Désignation �!� Code SH �!� Quantité �!� Unité �!� Prix unitaire (une ligne par produit)"></textarea>
         <button type="button" id="p-paste-add" style="margin-top:8px">Ajouter les lignes</button>
       </details>
     </fieldset>
     <fieldset>
-      <legend>Valeur Â· <span id="v-dev">EUR</span></legend>
+      <legend>Valeur · <span id="v-dev">EUR</span></legend>
       <div class="grid2">
         <div class="f" style="grid-column:1/-1">
           <span class="flabel">Incoterm</span>
           <input type="hidden" id="f-incoterm">
           <div class="ichips" role="group" aria-label="Incoterm">
-            <div class="irow"><small>Tous modes de transport</small><div><button type="button" class="ichip none" data-ic="" aria-pressed="false" aria-label="Non renseignÃ©">â€”</button><button type="button" class="ichip" data-ic="EXW" aria-pressed="false">EXW</button><button type="button" class="ichip" data-ic="FCA" aria-pressed="false">FCA</button><button type="button" class="ichip" data-ic="CPT" aria-pressed="false">CPT</button><button type="button" class="ichip" data-ic="CIP" aria-pressed="false">CIP</button><button type="button" class="ichip" data-ic="DAP" aria-pressed="false">DAP</button><button type="button" class="ichip" data-ic="DPU" aria-pressed="false">DPU</button><button type="button" class="ichip" data-ic="DDP" aria-pressed="false">DDP</button></div></div>
+            <div class="irow"><small>Tous modes de transport</small><div><button type="button" class="ichip none" data-ic="" aria-pressed="false" aria-label="Non renseigné">�</button><button type="button" class="ichip" data-ic="EXW" aria-pressed="false">EXW</button><button type="button" class="ichip" data-ic="FCA" aria-pressed="false">FCA</button><button type="button" class="ichip" data-ic="CPT" aria-pressed="false">CPT</button><button type="button" class="ichip" data-ic="CIP" aria-pressed="false">CIP</button><button type="button" class="ichip" data-ic="DAP" aria-pressed="false">DAP</button><button type="button" class="ichip" data-ic="DPU" aria-pressed="false">DPU</button><button type="button" class="ichip" data-ic="DDP" aria-pressed="false">DDP</button></div></div>
             <div class="irow"><small>Maritime et fluvial uniquement</small><div><button type="button" class="ichip" data-ic="FAS" aria-pressed="false">FAS</button><button type="button" class="ichip" data-ic="FOB" aria-pressed="false">FOB</button><button type="button" class="ichip" data-ic="CFR" aria-pressed="false">CFR</button><button type="button" class="ichip" data-ic="CIF" aria-pressed="false">CIF</button></div></div>
           </div>
           <p class="hint" id="inco-desc" style="margin:4px 0 0"></p>
           <p class="hint" id="inco-hint" style="margin:0"></p>
         </div>
-        <label class="f">Lieu Incoterm<input id="f-incotermLieu" placeholder="Douala, Anvers, Shanghaiâ€¦"></label>
+        <label class="f">Lieu Incoterm<input id="f-incotermLieu" placeholder="Douala, Anvers, Shanghai⬦"></label>
         <label class="f"><span id="l-facture">Montant facture</span><input id="f-facture" class="pnum" inputmode="decimal" placeholder="Vide = total des produits"></label>
-        <label class="f" id="w-fraisAvant"><span>Frais jusqu'Ã  bord (Ã  ajouter)</span><input id="f-fraisAvant" class="pnum" inputmode="decimal" placeholder="0"></label>
-        <label class="f"><span id="l-fret">Fret (Ã  ajouter)</span><input id="f-fret" class="pnum" inputmode="decimal" placeholder="0"></label>
-        <label class="f"><span id="l-ass">Assurance (Ã  ajouter)</span><input id="f-assurance" class="pnum" inputmode="decimal" placeholder="0"></label>
-        <label class="f" id="w-fraisApres"><span>Frais aprÃ¨s arrivÃ©e (inclus, Ã  dÃ©duire)</span><input id="f-fraisApres" class="pnum" inputmode="decimal" placeholder="0"></label>
+        <label class="f" id="w-fraisAvant"><span>Frais jusqu'à bord (à ajouter)</span><input id="f-fraisAvant" class="pnum" inputmode="decimal" placeholder="0"></label>
+        <label class="f"><span id="l-fret">Fret (à ajouter)</span><input id="f-fret" class="pnum" inputmode="decimal" placeholder="0"></label>
+        <label class="f"><span id="l-ass">Assurance (à ajouter)</span><input id="f-assurance" class="pnum" inputmode="decimal" placeholder="0"></label>
+        <label class="f" id="w-fraisApres"><span>Frais après arrivée (inclus, à déduire)</span><input id="f-fraisApres" class="pnum" inputmode="decimal" placeholder="0"></label>
         <p class="hint" id="v-rule" style="grid-column:1/-1;margin:0"></p>
       </div>
-      <div class="cif"><span>Total CIF</span><b id="v-cif">0</b><small id="v-note"></small><small id="v-warn" class="hint warn" hidden>VÃ©rifiez les montants : le FOB calculÃ© est nÃ©gatif.</small></div>
+      <div class="cif"><span>Total CIF</span><b id="v-cif">0</b><small id="v-note"></small><small id="v-warn" class="hint warn" hidden>Vérifiez les montants : le FOB calculé est négatif.</small></div>
     </fieldset>
     <fieldset>
-      <legend>Transport &amp; dÃ©douanement</legend>
+      <legend>Transport &amp; dédouanement</legend>
       <div class="grid2">
-        <label class="f"><span id="l-origine">Port de chargement</span><input id="f-origine" placeholder="Anvers, Shanghaiâ€¦"></label>
+        <label class="f"><span id="l-origine">Port de chargement</span><input id="f-origine" placeholder="Anvers, Shanghai⬦"></label>
         <label class="f"><span id="l-navire">Navire / voyage</span><input id="f-navire" placeholder="MSC ANNA / 245W"></label>
-        <label class="f"><span id="l-bl">NÂ° Bill of Lading</span><input id="f-bl" placeholder="MEDU1234567"></label>
+        <label class="f"><span id="l-bl">N° Bill of Lading</span><input id="f-bl" placeholder="MEDU1234567"></label>
         <label class="f"><span id="l-eta">ETA Douala</span><input id="f-eta" type="date"></label>
         <label class="f">Transitaire<input id="f-transitaire"></label>
-        <label class="f">NÂ° dossier transitaire<input id="f-transitaireRef" placeholder="RÃ©f. chez le transitaire"></label>
-        <label class="f">NÂ° DI<input id="f-di" placeholder="DÃ©claration d'importation"></label>
+        <label class="f">N° dossier transitaire<input id="f-transitaireRef" placeholder="Réf. chez le transitaire"></label>
+        <label class="f">N° DI<input id="f-di" placeholder="Déclaration d'importation"></label>
         <label class="f">Date DI<input id="f-diDate" type="date"></label>
         <label class="f">Date d'expiration DI<input id="f-diExp" type="date"></label>
         <p class="hint" id="di-hint" style="grid-column:1/-1;margin:0"></p>
@@ -150,25 +150,25 @@
       <div class="grid2">
         <label class="f">Nombre de colis<input id="f-colis" type="number" min="0" step="1" inputmode="numeric"></label>
         <label class="f">Poids brut (kg)<input id="f-poids" type="number" min="0" step="0.01" inputmode="decimal"></label>
-        <label class="f" id="w-volume">Volume (mÂ³)<input id="f-volume" type="number" min="0" step="0.001" inputmode="decimal"></label>
+        <label class="f" id="w-volume">Volume (m³)<input id="f-volume" type="number" min="0" step="0.001" inputmode="decimal"></label>
         <label class="f" id="w-taxable" hidden>Poids taxable (kg)<input id="f-taxable" type="number" min="0" step="0.01" inputmode="decimal"></label>
       </div>
     </fieldset>
     <fieldset id="set-ctn">
       <legend>Conteneurs</legend>
       <div class="addrow">
-        <input id="c-num" placeholder="MSCU1234565" maxlength="11" aria-label="NumÃ©ro de conteneur" autocomplete="off">
+        <input id="c-num" placeholder="MSCU1234565" maxlength="11" aria-label="Numéro de conteneur" autocomplete="off">
         <select id="c-type" aria-label="Type"><option>20'</option><option selected>40'</option></select>
         <button type="button" id="c-add">Ajouter</button>
       </div>
       <div id="c-err" class="err" hidden></div>
       <details>
-        <summary>Coller une liste de numÃ©ros</summary>
-        <textarea id="c-paste" placeholder="Un numÃ©ro par ligne, ou sÃ©parÃ©s par des virgules"></textarea>
+        <summary>Coller une liste de numéros</summary>
+        <textarea id="c-paste" placeholder="Un numéro par ligne, ou séparés par des virgules"></textarea>
         <button type="button" id="c-paste-add" style="margin-top:8px">Ajouter la liste</button>
       </details>
       <div id="c-list" class="clist"></div>
-      <div class="ctot"><span>âœ“ = chiffre de contrÃ´le ISO 6346 valide</span><span>Total <b id="c-tot">0</b> Â· EVP <b id="c-teu">0</b></span></div>
+      <div class="ctot"><span>�S = chiffre de contrôle ISO 6346 valide</span><span>Total <b id="c-tot">0</b> · EVP <b id="c-teu">0</b></span></div>
     </fieldset>
     <fieldset>
       <legend>Documents du dossier</legend>
@@ -177,13 +177,13 @@
       <div id="d-list" class="dlist"></div>
       <input type="file" id="d-file" accept="application/pdf,.pdf,image/*" hidden>
     </fieldset>
-    <label class="f">Notes<textarea id="f-notes" rows="3" placeholder="Remarques, documents manquantsâ€¦"></textarea></label>
+    <label class="f">Notes<textarea id="f-notes" rows="3" placeholder="Remarques, documents manquants⬦"></textarea></label>
     <div id="f-err" class="err" hidden></div>
   </form>
   <footer>
     <span id="f-del-wrap" style="margin-right:auto;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
       <button type="button" class="danger" id="f-del">Supprimer le dossier</button>
-      <span id="f-del-confirm" class="confirm" hidden>Supprimer dÃ©finitivement ce dossier et ses documents ?
+      <span id="f-del-confirm" class="confirm" hidden>Supprimer définitivement ce dossier et ses documents ?
         <button type="button" class="danger" id="f-del-yes">Oui, supprimer</button>
         <button type="button" class="ghost" id="f-del-no">Annuler</button></span>
     </span>
@@ -197,11 +197,11 @@
   <header><h2 id="rep-title">Rapport</h2><button type="button" class="ghost" data-close>Fermer</button></header>
   <div class="body">
     <div class="grid2">
-      <label class="f">PÃ©rimÃ¨tre<select id="r-scope"><option value="actifs">Dossiers en cours</option><option value="archives">Archives</option><option value="tous">Tous les dossiers</option></select></label>
+      <label class="f">Périmètre<select id="r-scope"><option value="actifs">Dossiers en cours</option><option value="archives">Archives</option><option value="tous">Tous les dossiers</option></select></label>
       <label class="f">Statut<select id="r-stat"></select></label>
       <label class="f">Transport<select id="r-mode"></select></label>
       <label class="f">Paiement<select id="r-pay"></select></label>
-      <label class="f">PÃ©riodes selon<select id="r-base"><option value="eta">Date d'arrivÃ©e (ETA)</option><option value="po">Date du PO</option></select></label>
+      <label class="f">Périodes selon<select id="r-base"><option value="eta">Date d'arrivée (ETA)</option><option value="po">Date du PO</option></select></label>
       <label class="f">Graphique<select id="r-view"><option value="mois">Par mois</option><option value="sem">Par semaine</option></select></label>
       <label class="f"><span id="l-from">ETA du</span><input id="r-from" type="date"></label>
       <label class="f"><span id="l-to">ETA au</span><input id="r-to" type="date"></label>
@@ -214,8 +214,8 @@
     </div>
     <section class="vsec" aria-labelledby="ann-title">
       <h4><span id="ann-title">Rapport annuel des PO</span></h4>
-      <div style="overflow-x:auto"><table class="rep-tbl"><thead><tr><th>AnnÃ©e</th><th class="r">PO livrÃ©s</th><th class="r">PO non livrÃ©s</th><th class="r">% livrÃ©s</th></tr></thead><tbody id="r-annual"></tbody></table></div>
-      <p class="note" style="margin:0">Tous les dossiers (en cours et archivÃ©s), regroupÃ©s par annÃ©e du PO. Un PO est Â« livrÃ© Â» quand son dossier a le statut LivrÃ©. Montant = valeur FOB du PO.</p>
+      <div style="overflow-x:auto"><table class="rep-tbl"><thead><tr><th>Année</th><th class="r">PO livrés</th><th class="r">PO non livrés</th><th class="r">% livrés</th></tr></thead><tbody id="r-annual"></tbody></table></div>
+      <p class="note" style="margin:0">Tous les dossiers (en cours et archivés), regroupés par année du PO. Un PO est « livré » quand son dossier a le statut Livré. Montant = valeur FOB du PO.</p>
       <button type="button" id="r-annual-xlsx" style="align-self:flex-start">Exporter le rapport annuel PO</button>
     </section>
     <div style="overflow-x:auto"><table class="rep-tbl"><thead><tr><th>Devise</th><th class="r">FOB</th><th class="r">Fret</th><th class="r">Assurance</th><th class="r">CIF</th></tr></thead><tbody id="r-byval"></tbody></table></div>
@@ -226,17 +226,17 @@
     <div style="overflow-x:auto"><table class="rep-tbl"><thead><tr><th>Par Incoterm</th><th>Dossiers</th></tr></thead><tbody id="r-byinco"></tbody></table></div>
     <div style="overflow-x:auto"><table class="rep-tbl"><thead><tr><th>Suivi des DI</th><th>Dossiers</th></tr></thead><tbody id="r-bydi"></tbody></table></div>
     <div style="overflow-x:auto"><table class="rep-tbl"><thead><tr><th>Documents manquants</th><th>Dossiers</th></tr></thead><tbody id="r-bydoc"></tbody></table></div>
-    <p class="note">Le rapport Excel contient 12 onglets : SynthÃ¨se (avec logo), Rapport annuel PO, DÃ©tail des PO, Par mois, Par semaine, Graphiques, Suivi DI, Dossiers, Produits, Conteneurs, Groupage &amp; aÃ©rien, Documents. Les tableaux ont des totaux, des filtres et des en-tÃªtes figÃ©s. La date et l'heure d'extraction figurent dans le nom du fichier et en tÃªte de chaque onglet.</p>
+    <p class="note">Le rapport Excel contient 12 onglets : Synthèse (avec logo), Rapport annuel PO, Détail des PO, Par mois, Par semaine, Graphiques, Suivi DI, Dossiers, Produits, Conteneurs, Groupage &amp; aérien, Documents. Les tableaux ont des totaux, des filtres et des en-têtes figés. La date et l'heure d'extraction figurent dans le nom du fichier et en tête de chaque onglet.</p>
   </div>
   <footer>
-    <button type="button" id="r-copy">Copier le rÃ©sumÃ©</button>
+    <button type="button" id="r-copy">Copier le résumé</button>
     <button type="button" class="primary" id="r-xlsx">Exporter le rapport Excel</button>
   </footer>
 </aside>
 
-<!-- AperÃ§u -->
+<!-- Aperçu -->
 <aside id="p-view" class="panel" hidden aria-labelledby="view-title">
-  <header><h2 id="view-title">AperÃ§u du dossier</h2><button type="button" class="ghost" data-close>Fermer</button></header>
+  <header><h2 id="view-title">Aperçu du dossier</h2><button type="button" class="ghost" data-close>Fermer</button></header>
   <div class="body" id="view-body"></div>
   <footer>
     <button type="button" id="v-print" hidden>Imprimer</button>
@@ -252,11 +252,11 @@
       <div class="lang" role="group" aria-label="Langue" data-notr>
         <button type="button" data-lang="fr" lang="fr" aria-pressed="true">FR</button>
         <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button>
-        <button type="button" data-lang="zh" lang="zh-CN" aria-pressed="false">ä¸­æ–‡</button>
+        <button type="button" data-lang="zh" lang="zh-CN" aria-pressed="false">中�!</button>
       </div>
     </div>
     <div><div class="eyebrow">Afrilux Smart</div><h2>Suivi Import</h2></div>
-    <p class="note" style="margin:0">Connectez-vous avec le compte crÃ©Ã© par votre administrateur.</p>
+    <p class="note" style="margin:0">Connectez-vous avec le compte créé par votre administrateur.</p>
     <label class="f">E-mail<input id="lg-email" type="email" autocomplete="username" required></label>
     <label class="f">Mot de passe<input id="lg-pass" type="password" autocomplete="current-password" required></label>
     <p class="err" id="lg-err" hidden></p>
