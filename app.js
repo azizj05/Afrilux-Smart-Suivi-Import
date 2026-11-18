@@ -318,6 +318,8 @@
   ];
   let assets = null;
   const STANDALONE = !window.claude;
+  const API_URL = window.AFX_API_URL || "http://localhost:3001/api";
+  const USE_API = window.AFX_USE_API === "1" || window.AFX_USE_API === true;
   const SB = (STANDALONE && window.AFX_SUPABASE_URL && window.AFX_SUPABASE_KEY && window.supabase) ? window.supabase.createClient(window.AFX_SUPABASE_URL, window.AFX_SUPABASE_KEY) : null;
   const BUCKET = "documents";
   const sbAssets = {
@@ -416,11 +418,35 @@
   function lsSave(){ try { localStorage.setItem(LS, JSON.stringify(items)); } catch {} }
   function upsertLocal(id, data){ const i = items.findIndex(x => x.id === id); const row = {id, ...data}; if (i >= 0) {items[i] = row;} else {items.push(row);} }
   async function save(id, data){
+    if (USE_API) {
+      try {
+        const {ref, ...rest} = data;
+        const body = {id, ref, ...rest};
+        const method = items.find(x => x.id === id) ? "PUT" : "POST";
+        const url = method === "PUT" ? `${API_URL}/dossiers/${id}` : `${API_URL}/dossiers`;
+        const resp = await fetch(url, {method, headers: {"Content-Type": "application/json"}, body: JSON.stringify(body)});
+        if (!resp.ok) {throw new Error(`HTTP ${resp.status}`);}
+        const saved = await resp.json();
+        upsertLocal(saved.id, saved.data || saved);
+        items = items.map(x => x.id === saved.id ? {id: saved.id, ...(saved.data || saved)} : x);
+        render();
+        return;
+      } catch (err) { toast("Erreur API : " + err.message); return; }
+    }
     if (SB) { const {error} = await SB.from("dossiers").upsert({id, data, updated_at: new Date().toISOString()}); if (error) {throw error;} upsertLocal(id, data); render(); }
     else if (col) { await col.doc(id).set(data); }
     else { const i = items.findIndex(x => x.id === id); const row = {id, ...data}; if (i >= 0) {items[i] = row;} else {items.push(row);} lsSave(); render(); }
   }
   async function remove(id){
+    if (USE_API) {
+      try {
+        const resp = await fetch(`${API_URL}/dossiers/${id}`, {method: "DELETE"});
+        if (!resp.ok) {throw new Error(`HTTP ${resp.status}`);}
+        items = items.filter(x => x.id !== id);
+        render();
+        return;
+      } catch (err) { toast("Erreur API : " + err.message); return; }
+    }
     if (SB) { const {error} = await SB.from("dossiers").delete().eq("id", id); if (error) {throw error;} items = items.filter(x => x.id !== id); render(); }
     else if (col) { await col.doc(id).delete(); }
     else { items = items.filter(x => x.id !== id); lsSave(); render(); }
@@ -1507,6 +1533,18 @@
     let ns = null;
     try { ns = await window.claude?.use?.("db"); } catch {}
     if (!ns) {
+      if (USE_API) {
+        try {
+          const resp = await fetch(`${API_URL}/dossiers`);
+          if (resp.ok) {
+            items = await resp.json();
+            render();
+            $("banner").hidden = false;
+            $("banner").textContent = "Mode API PostgreSQL : dossiers chargÃ©s depuis le serveur.";
+            return;
+          }
+        } catch { /* fallback localStorage */ }
+      }
       items = lsLoad();
       if (STANDALONE && window.indexedDB) { assets = localAssets; localFiles = true; $("btn-backup").hidden = false; $("btn-restore").hidden = false; }
       render();

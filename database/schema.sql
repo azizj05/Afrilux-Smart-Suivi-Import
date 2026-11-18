@@ -10,6 +10,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 -- ------------------------------------------------------------
 CREATE TABLE dossiers (
   id             TEXT PRIMARY KEY DEFAULT uuid_generate_v4(),
+  data           JSONB NOT NULL DEFAULT '{}'::jsonb,
   ref            TEXT UNIQUE NOT NULL,
   statut         TEXT NOT NULL DEFAULT 'Commandé'
                  CHECK (statut IN ('Commandé','En mer','Arrivé Douala','En dédouanement','Livré')),
