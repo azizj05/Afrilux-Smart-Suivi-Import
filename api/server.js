@@ -1,3 +1,21 @@
+const fs = require("fs");
+const path = require("path");
+
+// Lecture simple du fichier .env (sans dépendance dotenv)
+function loadEnv() {
+  const envPath = path.join(__dirname, ".env");
+  if (fs.existsSync(envPath)) {
+    const lines = fs.readFileSync(envPath, "utf8").split(/\r?\n/);
+    for (const line of lines) {
+      const match = line.match(/^([A-Z_]+)=(.*)$/);
+      if (match && !process.env[match[1]]) {
+        process.env[match[1]] = match[2].replace(/^"|"$|^'|'$/g, "");
+      }
+    }
+  }
+}
+loadEnv();
+
 const express = require("express");
 const cors = require("cors");
 const { Pool } = require("pg");
